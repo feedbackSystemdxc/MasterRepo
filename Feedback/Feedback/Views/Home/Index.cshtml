@@ -1,1 +1,64 @@
-﻿
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+} 
+
+    
+        <header>
+            <div class="navbar navbar-inverse navbar-fixed-top" style=" background-color:black">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="#Index" style="margin-left:0px"><img src="https://assets.website-files.com/5d96e7e173d7f14b2cdb74f2/5d96e7e173d7f16a59db7a59_3_logo_hz_rev.png" style="width:350px; height:auto; float:left;  margin-left:0px" /></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="exCollapsingNavbar" style="float:right; margin-top:30px">
+
+                        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+
+                            <li class="dropdown order-1">
+                                <button type="button" id="dropdownMenu1" data-toggle="dropdown" style="background-color:white" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right mt-2" style="width:300px; height:200px; padding: 20px">
+                                    <li class="px-3 py-2">
+                                        <form class="form" role="form">
+                                            <div class="form-group">
+                                                <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" style="background-color:black" class="btn btn-primary btn-block">Login</button>
+                                            </div>
+                                            <div class="form-group text-center">
+                                                <small><a href="#" data-toggle="modal" style="color:black" data-target="#modalPassword">Forgot password?</a></small>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+        <section style="height: 595px;" class="bg-image">
+            <div class="container body-content">
+                <div style="border: 2px solid white; text-align:center; margin:15%; margin-top:210px; height:200px; color:white; background-color:black">
+                    <h1>
+                        Feedback Forum
+                    </h1>
+                    <p>
+                        We at DXC Technology take your opinions seriously. Give your honest feedback which will help us help you better!
+                    </p><br />
+                    <a href="#feedback">
+                        <div style="background-color:white; border:0.5px solid white; width:200px; margin:auto; color:black;" class="alert">
+                            Give Feedback
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
