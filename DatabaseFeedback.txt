@@ -1,0 +1,56 @@
+create database feedbackSystemDxc
+
+create table Chapters(Cid int primary key,Cname varchar(30),Cpassword varchar(30))
+create table Customers(Custid int primary key,Dov date,Organization varchar(30))
+create table Products(Pid int primary key,Pname varchar(30),Cid int foreign key references Chapters(Cid))
+create table Feedbacks(Fid int primary key identity,
+Custid int foreign key references Customers(Custid),Pid int foreign key references Products(Pid),
+First int,Second int,Third int,Fourth int,Fifth int,Sixth int,Seventh int,Eight int,Ninth int,Tenth int,Comments varchar(250),
+Avg float
+)
+
+
+insert into Chapters values(1,'Analytics','Analytics')
+insert into Chapters values(2,'Cloud','Cloud')
+insert into Chapters values(3,'Apps','Apps')
+insert into Chapters values(4,'Devops','Devops')
+insert into Chapters values(5,'Iot','Iot')
+insert into Chapters values(6,'Security','Security')
+
+insert into Products values(1,'Wine Quality Prediction Model',1)
+insert into Products values(2,'Loan Prediction Model',1)
+
+insert into Products values(3,'eBug Tracker',2)
+insert into Products values(4,'University Campus Online Automation',2)
+
+insert into Products values(5,'ChatBot',3)
+insert into Products values(6,'Fitness Club Management System',3)
+
+insert into Products values(7,'Attorney Appointment Scheduling Software',4)
+insert into Products values(8,'Salon & Spa Booking System',4)
+
+insert into Products values(9,'IoT Based Intelligent Traffic Management System',5)
+insert into Products values(10,'Smart Irrigation System Using IoT',5)
+
+insert into Products values(11,'Sql Injection Prevention System',6)
+insert into Products values(12,'Online Transaction Fraud Detection',6)
+
+
+select * from Products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
