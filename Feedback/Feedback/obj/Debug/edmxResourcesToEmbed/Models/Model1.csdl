@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="feedbackSystemDxcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Chapters">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="Int32" Nullable="false" />
+    <Property Name="Cname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Cpassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__Cid__286302EC" FromRole="Chapters" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" />
+    <Property Name="Pname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Cid" Type="Int32" />
+    <NavigationProperty Name="Chapters" Relationship="Self.FK__Products__Cid__286302EC" FromRole="Products" ToRole="Chapters" />
+    <NavigationProperty Name="Feedbacks" Relationship="feedbackSystemDxcModel.FK__Feedbacks__Pid__4E88ABD4" FromRole="Products" ToRole="Feedbacks" />
+  </EntityType>
+  <Association Name="FK__Products__Cid__286302EC">
+    <End Role="Chapters" Type="Self.Chapters" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="Cid" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="Cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="feedbackSystemDxcEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Chapters" EntityType="Self.Chapters" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <AssociationSet Name="FK__Products__Cid__286302EC" Association="Self.FK__Products__Cid__286302EC">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <EntitySet Name="Customers" EntityType="feedbackSystemDxcModel.Customers" />
+    <EntitySet Name="Feedbacks" EntityType="feedbackSystemDxcModel.Feedbacks" />
+    <AssociationSet Name="FK__Feedbacks__Custi__4D94879B" Association="feedbackSystemDxcModel.FK__Feedbacks__Custi__4D94879B">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Feedbacks" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedbacks__Pid__4E88ABD4" Association="feedbackSystemDxcModel.FK__Feedbacks__Pid__4E88ABD4">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Feedbacks" EntitySet="Feedbacks" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Custid" />
+    </Key>
+    <Property Name="Custid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dov" Type="DateTime" Precision="0" />
+    <Property Name="Organization" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Feedbacks" Relationship="feedbackSystemDxcModel.FK__Feedbacks__Custi__4D94879B" FromRole="Customers" ToRole="Feedbacks" />
+  </EntityType>
+  <EntityType Name="Feedbacks">
+    <Key>
+      <PropertyRef Name="Fid" />
+    </Key>
+    <Property Name="Fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Custid" Type="Int32" />
+    <Property Name="Pid" Type="Int32" />
+    <Property Name="First" Type="Int32" />
+    <Property Name="Second" Type="Int32" />
+    <Property Name="Third" Type="Int32" />
+    <Property Name="Fourth" Type="Int32" />
+    <Property Name="Fifth" Type="Int32" />
+    <Property Name="Sixth" Type="Int32" />
+    <Property Name="Seventh" Type="Int32" />
+    <Property Name="Addition" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="Deletion" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="avg" Type="Double" />
+    <NavigationProperty Name="Customers" Relationship="feedbackSystemDxcModel.FK__Feedbacks__Custi__4D94879B" FromRole="Feedbacks" ToRole="Customers" />
+    <NavigationProperty Name="Products" Relationship="feedbackSystemDxcModel.FK__Feedbacks__Pid__4E88ABD4" FromRole="Feedbacks" ToRole="Products" />
+  </EntityType>
+  <Association Name="FK__Feedbacks__Custi__4D94879B">
+    <End Type="feedbackSystemDxcModel.Customers" Role="Customers" Multiplicity="0..1" />
+    <End Type="feedbackSystemDxcModel.Feedbacks" Role="Feedbacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Custid" />
+      </Principal>
+      <Dependent Role="Feedbacks">
+        <PropertyRef Name="Custid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Feedbacks__Pid__4E88ABD4">
+    <End Type="feedbackSystemDxcModel.Products" Role="Products" Multiplicity="0..1" />
+    <End Type="feedbackSystemDxcModel.Feedbacks" Role="Feedbacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="Feedbacks">
+        <PropertyRef Name="Pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

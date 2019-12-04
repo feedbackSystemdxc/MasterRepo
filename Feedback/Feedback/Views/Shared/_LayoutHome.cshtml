@@ -6,14 +6,24 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
     <style>
         .bg-image {
             background-image: url("http://assets1.dxc.technology/digital_transformation/images/Bangalore_Floor_IMG-20190607-WA0022.jpg");
-            /*background-image: url('download.jpg');*/
+            /*background-image: url('download');*/
+            /*opacity:0.6;*/
         }
     </style>
+    @*<script type="text/javascript">
+
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+    </script>*@
+
 </head>
-<body>
+<body @*onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload=""*@>
 
     @RenderBody()
     @Scripts.Render("~/bundles/jquery")

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="feedbackSystemDxcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chapters">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="int" Nullable="false" />
+    <Property Name="Cname" Type="varchar" MaxLength="30" />
+    <Property Name="Cpassword" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Custid" />
+    </Key>
+    <Property Name="Custid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dov" Type="date" />
+    <Property Name="Organization" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Feedbacks">
+    <Key>
+      <PropertyRef Name="Fid" />
+    </Key>
+    <Property Name="Fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Custid" Type="int" />
+    <Property Name="Pid" Type="int" />
+    <Property Name="First" Type="int" />
+    <Property Name="Second" Type="int" />
+    <Property Name="Third" Type="int" />
+    <Property Name="Fourth" Type="int" />
+    <Property Name="Fifth" Type="int" />
+    <Property Name="Sixth" Type="int" />
+    <Property Name="Seventh" Type="int" />
+    <Property Name="Addition" Type="varchar" MaxLength="2500" />
+    <Property Name="Deletion" Type="varchar" MaxLength="2500" />
+    <Property Name="Comments" Type="varchar" MaxLength="2500" />
+    <Property Name="avg" Type="float" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="int" Nullable="false" />
+    <Property Name="Pname" Type="varchar" MaxLength="30" />
+    <Property Name="Cid" Type="int" />
+  </EntityType>
+  <Association Name="FK__Feedbacks__Custi__4D94879B">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Feedbacks" Type="Self.Feedbacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Custid" />
+      </Principal>
+      <Dependent Role="Feedbacks">
+        <PropertyRef Name="Custid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Feedbacks__Pid__4E88ABD4">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Feedbacks" Type="Self.Feedbacks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="Feedbacks">
+        <PropertyRef Name="Pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Cid__286302EC">
+    <End Role="Chapters" Type="Self.Chapters" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="Cid" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="Cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="feedbackSystemDxcModelStoreContainer">
+    <EntitySet Name="Chapters" EntityType="Self.Chapters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedbacks" EntityType="Self.Feedbacks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Feedbacks__Custi__4D94879B" Association="Self.FK__Feedbacks__Custi__4D94879B">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Feedbacks" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedbacks__Pid__4E88ABD4" Association="Self.FK__Feedbacks__Pid__4E88ABD4">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Feedbacks" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Cid__286302EC" Association="Self.FK__Products__Cid__286302EC">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

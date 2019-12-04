@@ -148,3 +148,7 @@ C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\obj\Debug\Feedback.c
 C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\obj\Debug\Feedback.csproj.CopyComplete
 C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\obj\Debug\Feedback.dll
 C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\obj\Debug\Feedback.pdb
+C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\bin\EntityFramework.dll
+C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\bin\EntityFramework.SqlServer.dll
+C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\bin\EntityFramework.xml
+C:\Users\hs55\Documents\GitHub\MasterRepo\Feedback\Feedback\bin\EntityFramework.SqlServer.xml

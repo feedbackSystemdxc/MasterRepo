@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7bb008393843483cba17409032f65d55" Name="Diagram1">
+        <EntityTypeShape EntityType="feedbackSystemDxcModel.Chapters" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="feedbackSystemDxcModel.Products" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="feedbackSystemDxcModel.FK__Products__Cid__286302EC" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="feedbackSystemDxcModel.Customers" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="feedbackSystemDxcModel.Feedbacks" Width="1.5" PointX="5.25" PointY="1.125" />
+        <AssociationConnector Association="feedbackSystemDxcModel.FK__Feedbacks__Custi__4D94879B" />
+        <AssociationConnector Association="feedbackSystemDxcModel.FK__Feedbacks__Pid__4E88ABD4" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,42 @@
+﻿@model Feedback.Models.Feedbacks
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layoutfb.cshtml";
+}
+
+<h2>Feedback</h2>
+
+<div>
+    <hr />
+    <div>
+        <span style="font-size:x-large;">
+            <b>Product Name</b>  :   @Html.DisplayFor(model => model.Products.Pname)<br />
+        </span><br/><br/>
+        <br />
+
+        <span><b>Responses:</b><br /><br /></span>
+        
+        <span>1. To what extent did our prototype and service offering fulfil your requirements? <i class="glyphicon glyphicon-arrow-right"></i> <b>@Html.DisplayFor(model => model.First)</b></span><br/><br/>
+
+        <span>2. How do you rate our technical expertise in providing digital solutions? <i class="glyphicon glyphicon-arrow-right"></i> <b>@Html.DisplayFor(model => model.Second)</b></span><br/><br/>
+
+        <span>3. How was the quality of presentation based on information and clarity? <i class="glyphicon glyphicon-arrow-right"></i> <b>@Html.DisplayFor(model => model.Third)</b></span><br/><br/>
+
+        <span>
+            4. Rate your overall experience with our staff and organisation? <i class="glyphicon glyphicon-arrow-right"></i> <b>@Html.DisplayFor(model => model.Fourth)</b>
+        </span><br/><br/>
+
+        <span>5. How likely are you to consider our company first, to provide you with state of the art digital services? <i class="glyphicon glyphicon-arrow-right"></i> <b>@Html.DisplayFor(model => model.Fifth)</b></span><br/><br/>
+
+        <span>6. How well did we meet your expectations to provide a digital solution?  <i class="glyphicon glyphicon-arrow-right"></i> <b>@Html.DisplayFor(model => model.Sixth)</b></span><br/><br/>
+
+        <span>7. How likely are you to recommend our services to others? <i class="glyphicon glyphicon-arrow-right"></i> <b>@Html.DisplayFor(model => model.Seventh)</b></span><br/><br/>
+
+
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "UserPage",new { cid = Model.Products.Cid});
+
+</p>

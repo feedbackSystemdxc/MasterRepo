@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="feedbackSystemDxcModelStoreContainer" CdmEntityContainer="feedbackSystemDxcEntities">
+    <EntitySetMapping Name="Chapters">
+      <EntityTypeMapping TypeName="feedbackSystemDxcModel.Chapters">
+        <MappingFragment StoreEntitySet="Chapters">
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="Cname" ColumnName="Cname" />
+          <ScalarProperty Name="Cpassword" ColumnName="Cpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="feedbackSystemDxcModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Pid" ColumnName="Pid" />
+          <ScalarProperty Name="Pname" ColumnName="Pname" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="feedbackSystemDxcModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Dov" ColumnName="Dov" />
+          <ScalarProperty Name="Custid" ColumnName="Custid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="feedbackSystemDxcModel.Feedbacks">
+        <MappingFragment StoreEntitySet="Feedbacks">
+          <ScalarProperty Name="avg" ColumnName="avg" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Deletion" ColumnName="Deletion" />
+          <ScalarProperty Name="Addition" ColumnName="Addition" />
+          <ScalarProperty Name="Seventh" ColumnName="Seventh" />
+          <ScalarProperty Name="Sixth" ColumnName="Sixth" />
+          <ScalarProperty Name="Fifth" ColumnName="Fifth" />
+          <ScalarProperty Name="Fourth" ColumnName="Fourth" />
+          <ScalarProperty Name="Third" ColumnName="Third" />
+          <ScalarProperty Name="Second" ColumnName="Second" />
+          <ScalarProperty Name="First" ColumnName="First" />
+          <ScalarProperty Name="Pid" ColumnName="Pid" />
+          <ScalarProperty Name="Custid" ColumnName="Custid" />
+          <ScalarProperty Name="Fid" ColumnName="Fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
